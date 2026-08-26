@@ -940,19 +940,29 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; flex-direction: column; gap: 2px;
   border-right: 1px solid var(--line);
 }
+[dir="rtl"] .proj-spec-item {
+  border-right: none;
+  border-left: 1px solid var(--line);
+}
+[dir="rtl"] .proj-spec-item:last-child {
+  border-left: none;
+}
 .proj-spec-item:last-child { border-right: none; }
 .proj-spec-item span { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
-.proj-spec-item strong { font-size: 13px; font-weight: 600; color: var(--teal-deep); }
+.proj-spec-item strong { font-size: 12px; font-weight: 600; color: var(--teal-deep); line-height: 1.25; }
 
-/* Unit availability row */
+/* Unit availability 2x3 grid */
 .proj-card-unit-row {
-  display: flex; gap: 6px; flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
 }
 .proj-unit {
-  padding: 5px 10px;
+  padding: 6px 8px;
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; justify-content: space-between; gap: 4px;
   border: 1px solid;
+  white-space: nowrap;
 }
 .proj-unit-avail { background: rgba(188,133,82,0.1); border-color: var(--copper); color: var(--copper-soft); }
 .proj-unit-reserved { background: transparent; border-color: var(--line); color: var(--ink-soft); }
