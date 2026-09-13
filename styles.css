@@ -848,11 +848,13 @@ button { font-family: inherit; cursor: pointer; }
 }
 .proj-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card-hover); }
 
-/* Image area */
+/* Image area (also the "register interest" link on the active project card) */
 .proj-card-img {
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
+  display: block;
+  text-decoration: none;
 }
 .proj-card-img img {
   width: 100%; height: 100%;
@@ -860,6 +862,31 @@ button { font-family: inherit; cursor: pointer; }
   transition: transform 7s ease;
 }
 .proj-card:hover .proj-card-img img { transform: scale(1.06); }
+
+/* Website link bar directly under the project image */
+.proj-site-link {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 10px 22px;
+  background: var(--cream-soft);
+  border-top: 1px solid var(--line);
+  color: var(--teal-deep);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  transition: color .25s ease;
+}
+.proj-site-link svg {
+  width: 12px; height: 12px;
+  color: var(--copper);
+  flex-shrink: 0;
+}
+.proj-site-link span[dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: embed;
+  overflow-wrap: anywhere;
+}
+.proj-site-link:hover,
+.proj-site-link:focus-visible { color: var(--copper); }
 
 /* Teaser (no image) */
 .proj-card-img-teaser {
